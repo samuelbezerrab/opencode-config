@@ -1,0 +1,48 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "servers": {
+      "chrome-devtools": {
+        "type": "local",
+        "command": ["npx", "-y", "chrome-devtools-mcp@latest"]
+      },
+      "bitrise": {
+        "type": "local",
+        "command": [
+          "node",
+          "/Users/samuelbezerrab/Developer/others/bitrise-backup/mcp/bitrise/dist/src/index.js"
+        ]
+      },
+      "one": {
+        "type": "remote",
+        "url": "https://mcp.withone.ai/mcp"
+      },
+      "asana": {
+        "type": "local",
+        "command": ["npx", "-y", "@roychri/mcp-server-asana@1.8.0"],
+        "environment": {
+          "ASANA_ACCESS_TOKEN": "{file:~/.config/opencode/asana-token}"
+        }
+      },
+      "ticktick": {
+        "type": "remote",
+        "url": "https://mcp.ticktick.com",
+        "oauth": false,
+        "headers": {
+          "Authorization": "Bearer {file:~/.config/opencode/ticktick-token}"
+        }
+      },
+      "sentry-app2sales": {
+        "type": "local",
+        "command": [
+          "npx",
+          "-y",
+          "@sentry/mcp-server@0.49.0"
+        ],
+        "environment": {
+          "SENTRY_HOST": "sentry2.app2sales.com.br"
+        }
+      }
+    }
+  }
+}
