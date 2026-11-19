@@ -4,7 +4,11 @@
     "servers": {
       "chrome-devtools": {
         "type": "local",
-        "command": ["npx", "-y", "chrome-devtools-mcp@latest"]
+        "command": [
+          "npx",
+          "-y",
+          "chrome-devtools-mcp@latest"
+        ]
       },
       "bitrise": {
         "type": "local",
@@ -19,7 +23,11 @@
       },
       "asana": {
         "type": "local",
-        "command": ["npx", "-y", "@roychri/mcp-server-asana@1.8.0"],
+        "command": [
+          "npx",
+          "-y",
+          "@roychri/mcp-server-asana@1.8.0"
+        ],
         "environment": {
           "ASANA_ACCESS_TOKEN": "{file:~/.config/opencode/asana-token}"
         }
@@ -43,6 +51,14 @@
           "SENTRY_HOST": "sentry2.app2sales.com.br"
         }
       }
+    },
+    "atuin": {
+      "type": "local",
+      "command": [
+        "/Users/samuelbezerrab/.atuin/bin/atuin",
+        "mcp"
+      ],
+      "enabled": true
     }
   }
 }
